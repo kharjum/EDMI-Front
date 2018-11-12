@@ -15,17 +15,17 @@ export class AppComponent implements OnInit {
     this.items = [
       {
         label: 'Electricmeter',
-        icon: 'fa fa-fw fa-check',
+        icon: 'pi pi-bars',
         routerLink: ['/electricmeter-list']
       },
       {
         label: 'Gateways',
-        icon: 'fa fa-fw fa-check',
+        icon: 'pi pi-bars',
         routerLink: ['/gateways-list']
       },
       {
         label: 'Watermeter',
-        icon: 'fa fa-fw fa-check',
+        icon: 'pi pi-bars',
         routerLink: ['/watermeter-list']
       }
     ];

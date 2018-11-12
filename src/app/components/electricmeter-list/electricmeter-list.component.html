@@ -1,5 +1,4 @@
-<p-card header="Simple Card" class="ui-g-12">
-  <p-header> List </p-header>
+<p-card header="ElectricMeter List" [style]="{width: '100%'}">
   <div>
     <button
       pButton
@@ -22,14 +21,16 @@
           <button
             pButton
             type="button"
-            label="Edit"
+            icon="pi pi-pencil"
+            title="Edit Item"
             class="ui-button-warning"
             [routerLink]="['/electricmeter-detail/', electricmeter.id]"
           ></button>
           <button
             pButton
             type="button"
-            label="Remove"
+            icon="pi pi-trash"
+            title="Delete Item"
             class="ui-button-danger"
             (click)="removeElectricMeter(electricmeter.id)"
           ></button>

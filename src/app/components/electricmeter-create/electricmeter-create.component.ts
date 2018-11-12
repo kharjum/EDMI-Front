@@ -4,6 +4,8 @@ import { FormBuilder } from '@angular/forms';
 import { ElectricmeterService } from 'src/app/services/electricmeter.service';
 import { Electricmeter } from 'src/app/models/electricmeter';
 import { ActivatedRoute } from '@angular/router';
+import { Message } from 'primeng/components/common/api';
+import { MessageService } from 'primeng/components/common/messageservice';
 
 @Component({
   selector: 'app-electricmeter-create',
@@ -14,11 +16,13 @@ export class ElectricmeterCreateComponent implements OnInit {
   form: FormGroup;
   electricmeter: Electricmeter;
   id: number;
+  msgs: Message[] = [];
 
   constructor(
     private fb: FormBuilder,
     private electricmeterservice: ElectricmeterService,
-    private router: ActivatedRoute
+    private router: ActivatedRoute,
+    private messageService: MessageService
   ) {}
 
   ngOnInit() {
@@ -59,5 +63,14 @@ export class ElectricmeterCreateComponent implements OnInit {
         .createElectricmeter(this.form.value)
         .subscribe();
     }
+  }
+
+  showSuccess() {
+    this.msgs = [];
+    this.msgs.push({
+      severity: 'success',
+      summary: 'Success ',
+      detail: 'The operation has been completed'
+    });
   }
 }

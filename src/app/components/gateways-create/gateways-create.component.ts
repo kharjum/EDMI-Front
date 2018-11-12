@@ -4,6 +4,8 @@ import { FormBuilder } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { GatewaysService } from 'src/app/services/gateways.service';
 import { Gateways } from 'src/app/models/gateways';
+import { Message } from 'primeng/components/common/message';
+import { MessageService } from 'primeng/components/common/messageservice';
 
 @Component({
   selector: 'app-gateways-create',
@@ -15,12 +17,14 @@ export class GatewaysCreateComponent implements OnInit {
   form: FormGroup;
   gateways: Gateways;
   id: number;
+  msgs: Message[] = [];
 
 
   constructor(
     private fb: FormBuilder,
     private electricmeterservice: GatewaysService,
-    private router: ActivatedRoute
+    private router: ActivatedRoute,
+    private messageService: MessageService
   ) { }
 
   ngOnInit() {
@@ -63,6 +67,15 @@ export class GatewaysCreateComponent implements OnInit {
         .createGateways(this.form.value)
         .subscribe();
     }
+  }
+
+  showSuccess() {
+    this.msgs = [];
+    this.msgs.push({
+      severity: 'success',
+      summary: 'Success ',
+      detail: 'The operation has been completed'
+    });
   }
 
 }

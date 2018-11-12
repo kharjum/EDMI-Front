@@ -9,6 +9,8 @@ import { CardModule } from 'primeng/card';
 import { TableModule } from 'primeng/table';
 import { MegaMenuModule } from 'primeng/megamenu';
 import { ElectricmeterService } from 'src/app/services/electricmeter.service';
+import {MessagesModule} from 'primeng/messages';
+import {MessageModule} from 'primeng/message';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,6 +24,7 @@ import { FormsModule } from '@angular/forms';
 import { WatermeterService } from 'src/app/services/watermeter.service';
 import { Gateways } from 'src/app/models/gateways';
 import { GatewaysService } from 'src/app/services/gateways.service';
+import { MessageService } from 'primeng/components/common/messageservice';
 
 @NgModule({
   declarations: [
@@ -43,10 +46,12 @@ import { GatewaysService } from 'src/app/services/gateways.service';
     ReactiveFormsModule,
     FormsModule,
     BrowserAnimationsModule,
+    MessagesModule,
+    MessageModule,
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [ElectricmeterService, WatermeterService, GatewaysService],
+  providers: [ElectricmeterService, WatermeterService, GatewaysService, MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

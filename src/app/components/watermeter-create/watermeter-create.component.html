@@ -57,7 +57,9 @@
         icon="fa-floppy-o"
         label="Save"
         [disabled]="!form.valid"
+        (click)="showSuccess()"
       ></button>
     </div>
   </form>
+  <p-messages [(value)]="msgs"></p-messages>
 </p-card>

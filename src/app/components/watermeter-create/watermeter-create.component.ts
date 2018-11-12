@@ -4,6 +4,8 @@ import { FormBuilder } from '@angular/forms';
 import { WatermeterService } from 'src/app/services/watermeter.service';
 import { ActivatedRoute } from '@angular/router';
 import { Watermeter } from 'src/app/models/watermeter';
+import { Message } from 'primeng/components/common/message';
+import { MessageService } from 'primeng/components/common/messageservice';
 
 @Component({
   selector: 'app-watermeter-create',
@@ -15,11 +17,13 @@ export class WatermeterCreateComponent implements OnInit {
   form: FormGroup;
   watermeter: Watermeter;
   id: number;
+  msgs: Message[] = [];
 
   constructor(
     private fb: FormBuilder,
     private watermeterservice: WatermeterService,
-    private router: ActivatedRoute
+    private router: ActivatedRoute,
+    private messageService: MessageService
   ) { }
 
   ngOnInit() {
@@ -62,5 +66,13 @@ export class WatermeterCreateComponent implements OnInit {
     }
   }
 
+  showSuccess() {
+    this.msgs = [];
+    this.msgs.push({
+      severity: 'success',
+      summary: 'Success ',
+      detail: 'The operation has been completed'
+    });
+  }
 }
 

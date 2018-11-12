@@ -1,0 +1,63 @@
+<p-card header="Simple Card" class="ui-g-12">
+  <p-header><strong> Manage Watermeter </strong></p-header>
+  <form [formGroup]="form" (ngSubmit)="submit()" class="p-3 bg-faded">
+    <div class="form-group row">
+      <label for="serialNumber" class="col-sm-3 col-form-label"
+        ><strong>Serial Number</strong></label
+      >
+      <div class="col-sm-9">
+        <input
+          id="serialNumber"
+          type="text"
+          class="form-control"
+          formControlName="serialNumber"
+        />
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="firmwareVersion" class="col-sm-3 col-form-label"
+        ><strong>Firmware Version</strong></label
+      >
+      <div class="col-sm-9">
+        <input
+          id="firmwareVersion"
+          type="text"
+          class="form-control"
+          formControlName="firmwareVersion"
+        />
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="state" class="col-sm-3 col-form-label"
+        ><strong>State</strong></label
+      >
+      <div class="col-sm-9">
+        <input
+          id="state"
+          type="text"
+          class="form-control"
+          formControlName="state"
+        />
+      </div>
+    </div>
+    <input id="id" type="hidden" class="form-control" formControlName="id" />
+    <div class="text-right">
+      <button
+        pButton
+        type="button"
+        class="ui-button-info"
+        icon="fa-times"
+        label="Cancel"
+        (click)="cancel()"
+      ></button>
+      <button
+        pButton
+        type="submit"
+        class="ui-button-success"
+        icon="fa-floppy-o"
+        label="Save"
+        [disabled]="!form.valid"
+      ></button>
+    </div>
+  </form>
+</p-card>

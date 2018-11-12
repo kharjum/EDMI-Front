@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+  width: 60%;
+  min-width: 500px;
+  margin: 0 auto;
+  text-align: center;
+  align-content: center;
+}
+
+body button {
+    margin: 7px!important;
+}

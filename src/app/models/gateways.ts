@@ -3,6 +3,6 @@ export class Gateways {
     serialNumber: string;
     firmwareVersion: string;
     state: string;
-    ip: number;
+    ip: string;
     port: number;
 }

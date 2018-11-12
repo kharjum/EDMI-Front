@@ -49,6 +49,8 @@ export class GatewaysCreateComponent implements OnInit {
         Validators.required
       ],
       state: [this.gateways.state, Validators.required],
+      ip: [this.gateways.ip, Validators.required],
+      port: [this.gateways.port, Validators.required],
       id: [this.gateways.id]
     });
   }
